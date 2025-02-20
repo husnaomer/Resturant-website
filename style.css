@@ -43,3 +43,18 @@ a{
     text-decoration: none;
     color: black;
 }
+.menu-header{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 40px);
+}
+.menu-title{
+    font-family: 'Abel';
+    font-size: 24px;
+    font-weight: 300;
+}
