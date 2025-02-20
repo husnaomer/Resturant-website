@@ -35,9 +35,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 .navbar-collapse.collapsing, .navbar-collapse.show{
     display: flex !important;
+    transition: height 0.3s ease-in-out, opacity 0.3 ease-in-out;
 }
 a{
     text-decoration: none;
@@ -54,7 +56,72 @@ a{
     width: calc(100% - 40px);
 }
 .menu-title{
-    font-family: 'Abel';
+    font-family: 'Abel', sans-serif;
     font-size: 24px;
     font-weight: 300;
+}
+.title{
+    font-family: 'Abel' sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: white;
+    cursor: pointer;
+}
+.title:hover{
+    color: white;
+    opacity: 0.8;
+}
+.nav-pages{
+    font-family: 'poppins', sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+}
+.navbar-nav .nav-link{
+    color: black !important;
+}
+.social-icons{
+    position: absolute;
+    bottom: 60px;
+    font-size: 20px;
+}
+.instagram-icon{
+    padding-right: 10px;
+}
+.navbar-toggler{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+}
+.navbar-toggler-icon{
+    display: none;
+}
+.custom-toggler-icon{
+    background-color: white !important;
+    width: 35px;
+    height: 1.2px;
+    display: block;
+    margin: 10px;
+    background-image: none !important;
+}
+.custom-toggler-icon:hover{
+    opacity: 0.8;
+}
+.custom-toggler{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1px !important;
+}
+.navbar-toggler.custom-toggler{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+}
+.navbar-toggler:focus{
+    outline: none !important;
+    box-shadow: none !important;
 }
