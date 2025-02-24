@@ -20,6 +20,14 @@ body{
     text-align: center;
     
 }
+.navbar{
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+    transition: background-color 0.3s ease-in-out;
+}
 .nav{
     background-color: transparent !important;
     
@@ -36,10 +44,28 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    transition: opacity 0.1s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
 }
-.navbar-collapse.collapsing, .navbar-collapse.show{
-    display: flex !important;
-    transition: height 0.3s ease-in-out, opacity 0.3 ease-in-out;
+@media (min-width: 992px){
+    .full-screen-menu{
+        position: static;
+        height: auto;
+        background: transparent;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+.navbar-collapse.show.full-screen-menu{
+    opacity: 1;
+    pointer-events: auto;
+}
+.navbar-collapse.show{
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transition: opacity 0.3s ease-in-out;
 }
 a{
     text-decoration: none;
@@ -94,14 +120,26 @@ a{
     cursor: pointer;
 }
 .navbar-toggler-icon{
-    display: none;
+    display: block !important;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
 }
-.custom-toggler-icon{
+/*.custom-toggler-icon{
     background-color: white !important;
     width: 35px;
     height: 1.2px;
     display: block;
     margin: 10px;
+    background-image: none !important;
+}*/
+.custom-toggler-icon{
+    width: 35px;
+    height: 2.5px;
+    background-color: white;
+    display: block;
+    margin: 6px 0;
     background-image: none !important;
 }
 .custom-toggler-icon:hover{
@@ -124,4 +162,67 @@ a{
 .navbar-toggler:focus{
     outline: none !important;
     box-shadow: none !important;
+}
+@media(min-width: 992px){
+    .navbar-collapse{
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        height: auto !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: static !important;
+        background: transparent !important;
+    }
+    .navbar-nav{
+        display: flex;
+        flex-direction: row !important;
+        gap: 20px;
+    }
+    .navbar-toggler{
+        display: none !important;
+    }
+    .social-icons{
+        position: static !important;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 20px;
+    }
+}
+@media (max-width: 991px){
+    .full-screen-menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .navbar-collapse.show{
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+    .navbar-nav{
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .social-icons{
+        position: absolute;
+        bottom: 60px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar-toggler{
+        display: flex !important;
+    }
 }
