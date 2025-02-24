@@ -21,12 +21,14 @@ body{
     
 }
 .navbar{
-    background-color: rgba(0, 0, 0, 0.6) !important;
+    background-color: transparent !important;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1050;
     transition: background-color 0.3s ease-in-out;
+    padding: 30px;
+
 }
 .nav{
     background-color: transparent !important;
@@ -48,6 +50,7 @@ body{
     opacity: 0;
     pointer-events: none;
 }
+
 @media (min-width: 992px){
     .full-screen-menu{
         position: static;
@@ -109,6 +112,7 @@ a{
     position: absolute;
     bottom: 60px;
     font-size: 20px;
+    display: none;
 }
 .instagram-icon{
     padding-right: 10px;
@@ -163,6 +167,9 @@ a{
     outline: none !important;
     box-shadow: none !important;
 }
+.close-menu{
+    display: none;
+}
 @media(min-width: 992px){
     .navbar-collapse{
         display: flex !important;
@@ -177,7 +184,7 @@ a{
     .navbar-nav{
         display: flex;
         flex-direction: row !important;
-        gap: 20px;
+        gap: 5px;
     }
     .navbar-toggler{
         display: none !important;
@@ -189,6 +196,31 @@ a{
         gap: 15px;
         font-size: 20px;
     }
+    .menu-header{
+        display: none;
+    }
+    .navbar-nav .nav-link{
+        color: white !important;
+        font-size: 15px;
+        width: 100;
+    }
+    .social-icons{
+        display: flex !important;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        gap: 15px;
+        font-size: 18px;
+        color: white;
+    }
+    .social-icons a{
+        color: white !important;
+        text-decoration: none;
+    }
+    .social-icons a:hover{
+        opacity: 0.8;
+    }
+    
 }
 @media (max-width: 991px){
     .full-screen-menu{
@@ -208,6 +240,7 @@ a{
         pointer-events: none;
     }
     .navbar-collapse.show{
+        background-color: white !important;
         opacity: 1 !important;
         pointer-events: auto !important;
     }
