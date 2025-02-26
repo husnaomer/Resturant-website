@@ -296,8 +296,14 @@ a{
         max-width: 1200px;
         margin: 0 auto;
     }
-    .footer{
-        
+    .footer-container{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .footer-section-contact, .footer-section-icons{
+        flex: 1;
+        text-align: center;
     }
 }
 @media (max-width: 991px){
